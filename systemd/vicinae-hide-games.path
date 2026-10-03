@@ -1,0 +1,11 @@
+[Unit]
+Description=Watch application directories for new games
+
+[Path]
+PathChanged=%h/.local/share/applications
+PathChanged=%h/.local/share/flatpak/exports/share/applications
+PathChanged=/var/lib/flatpak/exports/share/applications
+PathChanged=/usr/share/applications
+
+[Install]
+WantedBy=default.target

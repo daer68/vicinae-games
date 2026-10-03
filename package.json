@@ -1,0 +1,35 @@
+{
+	"$schema": "https://raw.githubusercontent.com/vicinaehq/vicinae/refs/heads/main/extra/schemas/extension.json",
+	"name": "games",
+	"title": "Games",
+	"description": "Search and launch installed games from any launcher",
+	"categories": [
+		"Applications"
+	],
+	"license": "MIT",
+	"author": "daer68",
+	"icon": "icon.png",
+	"commands": [
+		{
+			"name": "games",
+			"title": "Games",
+			"description": "Search and launch installed games",
+			"mode": "view"
+		}
+	],
+	"preferences": [],
+	"scripts": {
+		"build": "vici build && npm run build:hider",
+		"dev": "vici develop",
+		"build:hider": "esbuild src/hide-games.ts --bundle --platform=node --format=cjs --outfile=dist/hide-games.js --banner:js='#!/usr/bin/env node' --log-level=warning"
+	},
+	"dependencies": {
+		"@vicinae/api": "^0.29.1"
+	},
+	"devDependencies": {
+		"@types/node": "^24.9.2",
+		"@types/react": "^19.2.17",
+		"esbuild": "^0.28.2",
+		"typescript": "^5.9.2"
+	}
+}

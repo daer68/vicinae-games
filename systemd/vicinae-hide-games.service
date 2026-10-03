@@ -1,0 +1,9 @@
+[Unit]
+Description=Hide games from the Vicinae root search
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/vicinae-hide-games
+
+[Install]
+WantedBy=default.target
