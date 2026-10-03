@@ -84,7 +84,7 @@ install -Dm644 systemd/vicinae-hide-games.service "$UNIT_DIR/vicinae-hide-games.
 install -Dm644 systemd/vicinae-hide-games.path "$UNIT_DIR/vicinae-hide-games.path"
 systemctl --user daemon-reload
 systemctl --user enable --now vicinae-hide-games.path vicinae-hide-games.service
-journalctl --user -u vicinae-hide-games.service -n 1 --no-pager -o cat || true
+journalctl --user -u vicinae-hide-games.service -n 3 --no-pager -o cat | grep -E 'hidden|unchanged' | tail -1 | sed 's/^/    /' || true
 
 echo "==> Done"
 case ":$PATH:" in *":$BIN_DIR:"*) ;; *) echo "note: $BIN_DIR is not in PATH; the service still works, but run the tool by full path" ;; esac
