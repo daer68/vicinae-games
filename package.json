@@ -1,7 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/vicinaehq/vicinae/refs/heads/main/extra/schemas/extension.json",
 	"name": "games",
-	"title": "Games",
+	"title": "Game Library",
 	"description": "Search and launch installed games from any launcher",
 	"categories": [
 		"Applications"
